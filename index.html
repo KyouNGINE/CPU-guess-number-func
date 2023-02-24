@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>CPU guess number func</title>
+
+    </head>
+
+    <body>
+
+        <div>How many fingers are You holding up?</div>
+
+        <div>
+            
+            <select id="userNumber">
+
+                <option>0</option>
+    
+                <option>1</option>
+    
+                <option>2</option>
+    
+                <option>3</option>
+    
+                <option>4</option>
+    
+                <option>5</option>
+    
+            </select>
+
+            <button id="guessButton">Check</button>
+        
+        </div>
+
+        <script type="text/javascript">   
+        
+            function doAGuess(correctAnswer) {
+
+                let generatedNumber = Math.floor(Math.random() * 6);
+
+                    if (correctAnswer == generatedNumber) {
+
+                        return true;
+
+                    } else {
+
+                        return false;
+
+                    }
+
+            }
+
+            document.getElementById('guessButton').onclick = function() {
+
+                let choseNumber = document.getElementById('userNumber').value;
+
+                let gotIt = false;
+
+                let numberOfGuesses = 1;
+
+                while (gotIt == false) {
+
+                    if (doAGuess(choseNumber) == true) {
+
+                        gotIt = true;
+
+                        alert('Got ' + choseNumber + ' in ' + numberOfGuesses + ' guesses!');
+
+                    } else {
+
+                        numberOfGuesses++;
+
+                    }
+
+                }
+
+            }
+
+
+        </script>
+
+    </body>
+
+</html>
